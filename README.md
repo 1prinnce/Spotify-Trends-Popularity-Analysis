@@ -141,8 +141,7 @@ All large files are hosted on Google Drive:
   https://drive.google.com/file/d/1A6xkk0yKHRMnWeGemkwpEClfK0TTBw71/view?usp=sharing
 
 ---
-
-## ❤️ Made with Love  
+ 
 If you like the project, ⭐ the repository.  
 ThankkkYoU !
 
