@@ -104,8 +104,7 @@ ORDER BY hit_count DESC;
 - Drake, Ariana Grande & The Weeknd appear among top hit-song artists  
 - High-popularity tracks show strong energy + danceability  
 - Majority of songs fall into Low & Medium popularity brackets  
-- Average song duration ≈ **3.9 minutes**
-- 
+- Average song duration ≈ **3.9 minutes** 
 ---
 
 ## 📁 Project Files (Download Links)
