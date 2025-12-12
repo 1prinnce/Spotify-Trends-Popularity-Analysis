@@ -105,17 +105,7 @@ ORDER BY hit_count DESC;
 - High-popularity tracks show strong energy + danceability  
 - Majority of songs fall into Low & Medium popularity brackets  
 - Average song duration ≈ **3.9 minutes**
-
----
-
-## 🌟 Why This Project Stands Out
-
-- End-to-end data analytics workflow  
-- Real-world dataset (230K+ rows)  
-- SQL + Power BI integration  
-- Clean & interactive visuals  
-- Strong portfolio/value for resumes  
-
+- 
 ---
 
 ## 📁 Project Files (Download Links)
