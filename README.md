@@ -1,136 +1,110 @@
-# 🎵 Spotify Trends & Popularity Analysis Dashboard
-Unlocking insights from **230K+ songs** using **Excel → SQL → Power BI** ⚡
+# Spotify Trends & Popularity Analysis (230K Songs) 🎧
+
+This project analyzes a large Spotify dataset (~230,000 songs) to understand what factors influence song popularity.
+The complete workflow was done using **Excel, SQL, and Power BI** — starting from raw data cleaning to building an interactive dashboard.
 
 ---
 
-## 📌 Project Summary
+## Project Objectives 🎯
 
-This project analyzes Spotify’s large-scale song dataset to uncover:
-
-- Which genres are most popular  
-- Which artists produce the most hit songs  
-- How audio features (energy, danceability, valence, tempo) influence popularity  
-- Popularity distribution across songs  
-- Characteristics that define a “hit” track  
-
-The workflow includes **data cleaning**, **SQL analysis**, and a fully interactive **Power BI dashboard**.
+- Identify the most popular genres on Spotify  
+- Analyze artists with the highest number of hit songs  
+- Study how audio features like energy, danceability, valence, and tempo affect popularity  
+- Understand song distribution across popularity levels  
+- Identify common characteristics of hit tracks  
 
 ---
 
-## 🛠 Tech Stack
+## Tools & Technologies 🛠️
 
-| Tool      | Purpose |
-|-----------|---------|
-| Excel     | Cleaning & preprocessing |
-| SQL       | Data analysis & querying |
-| Power BI  | Dashboard creation |
-| DAX       | Custom measures |
+- **Excel** – Data cleaning and preprocessing  
+- **SQL** – Data analysis and querying  
+- **Power BI** – Dashboard creation and visualization  
+- **DAX** – Custom measures and KPIs  
 
 ---
 
-## 🧹 Data Cleaning Steps
+## Data Cleaning & Preparation 🧹
 
-- Removed duplicate rows  
-- Handled missing values  
-- Converted duration from ms → minutes  
-- Added `popularity_level` (High / Medium / Low)  
-- Cleaned genres & artist names  
-- Prepared dataset for SQL + BI  
-
----
-
-## 🧠 Key SQL Queries Used
-
-### ⭐ Total Songs
-```sql
-SELECT COUNT(*) AS total_songs FROM spotifyclean;
-```
-
-### ⭐ Top 20 Most Popular Songs
-```sql
-SELECT track_name, artist_name, popularity
-FROM spotifyclean
-ORDER BY popularity DESC
-LIMIT 20;
-```
-
-### ⭐ Most Popular Genre
-```sql
-SELECT genre, AVG(popularity) AS avg_popularity
-FROM spotifyclean
-GROUP BY genre
-ORDER BY avg_popularity DESC;
-```
-
-### ⭐ Song Distribution by Popularity Level
-```sql
-SELECT popularity_level, COUNT(*) AS total_songs
-FROM spotifyclean
-GROUP BY popularity_level;
-```
-
-### ⭐ Artists With Most Hit Songs (popularity ≥ 70)
-```sql
-SELECT artist_name, COUNT(*) AS hit_count
-FROM spotifyclean
-WHERE popularity >= 70
-GROUP BY artist_name
-ORDER BY hit_count DESC;
-```
+- Removed duplicate records  
+- Handled missing and inconsistent values  
+- Converted song duration from milliseconds to minutes  
+- Created a `popularity_level` column (High / Medium / Low)  
+- Standardized genre and artist names  
+- Prepared the dataset for SQL analysis and Power BI  
 
 ---
 
-## 📊 Power BI Dashboard Highlights
+## SQL Analysis 🧠
 
-### 🔥 Visuals Created
-- Total Songs  
-- Average Popularity Score  
-- Average Duration  
-- Popularity Level Distribution (Pie Chart)  
-- Most Streamed Artists (Hit Song Count)  
-- Genre-wise Popularity  
-- Energy vs Danceability Scatter Plot  
+### Total Number of Songs
+`SELECT COUNT(*) AS total_songs FROM spotifyclean;`
 
-### 🎛 Slicers Added
+### Top 20 Most Popular Songs
+`SELECT track_name, artist_name, popularity FROM spotifyclean ORDER BY popularity DESC LIMIT 20;`
+
+### Genre-wise Average Popularity
+`SELECT genre, AVG(popularity) AS avg_popularity FROM spotifyclean GROUP BY genre ORDER BY avg_popularity DESC;`
+
+### Song Distribution by Popularity Level
+`SELECT popularity_level, COUNT(*) AS total_songs FROM spotifyclean GROUP BY popularity_level;`
+
+### Artists with the Most Hit Songs (Popularity ≥ 70)
+`SELECT artist_name, COUNT(*) AS hit_count FROM spotifyclean WHERE popularity >= 70 GROUP BY artist_name ORDER BY hit_count DESC;`
+
+---
+
+## Power BI Dashboard 📊
+
+### Visuals Included
+
+- Total number of songs  
+- Average popularity score  
+- Average song duration  
+- Popularity level distribution  
+- Artists with the highest number of hit songs  
+- Genre-wise popularity comparison  
+- Energy vs danceability scatter plot  
+
+### Filters & Slicers
+
 - Artist  
 - Genre  
-- Popularity Level (High, Medium, Low)
+- Popularity Level (High / Medium / Low)
 
 ---
 
-## 🚀 Insights Discovered
+## Key Insights 🔍
 
-- Pop, Rap & Rock dominate popularity  
-- Drake, Ariana Grande & The Weeknd appear among top hit-song artists  
-- High-popularity tracks show strong energy + danceability  
-- Majority of songs fall into Low & Medium popularity brackets  
-- Average song duration ≈ **3.9 minutes** 
----
-
-## 📁 Project Files (Download Links)
-
-All large files are hosted on Google Drive:
-
-- **Dataset (Raw):**  
-  https://drive.google.com/file/d/1Et4ONScKN0TXuSmizuYEhhrC4gs_PV9i/view?usp=sharing
-
-- **Cleaned Dataset:**  
-  https://docs.google.com/spreadsheets/d/1vTGuKV8w7Hzpg_7JbuFzAnn7MzKGKXaj/edit?usp=sharing
-
-- **SQL Processed Data:**  
-  https://drive.google.com/file/d/1Nocta9j_3ZEIBLbn0Ub1cQHo1n09_osr/view?usp=sharing
-
-- **Project Report (DOCX):**  
-  https://docs.google.com/document/d/1cTLKUNE2wDZC8c-5jGuMtyYLQVl7Clbr/edit?usp=sharing
-
-- **Power BI Dashboard (PBIX):**  
-  https://drive.google.com/file/d/1vxkS-JHMc8jHwFhMek87Jxsc7gWsRPJS/view?usp=sharing
-
-- **Presentation (PPT):**  
-  https://drive.google.com/file/d/1A6xkk0yKHRMnWeGemkwpEClfK0TTBw71/view?usp=sharing
+- Pop, Rap, and Rock genres have the highest average popularity  
+- Artists like Drake, Ariana Grande, and The Weeknd frequently appear among hit tracks  
+- High-popularity songs generally show higher energy and danceability  
+- Most songs fall into Low and Medium popularity categories  
+- The average song duration is approximately **3.9 minutes**
 
 ---
- 
-If you like the project, ⭐ the repository.  
-ThankkkYoU !
+
+## Project Files 📁
+
+- **Raw Dataset**  
+  https://drive.google.com/file/d/1Et4ONScKN0TXuSmizuYEhhrC4gs_PV9i/view  
+
+- **Cleaned Dataset**  
+  https://docs.google.com/spreadsheets/d/1vTGuKV8w7Hzpg_7JbuFzAnn7MzKGKXaj/edit  
+
+- **SQL Processed Data**  
+  https://drive.google.com/file/d/1Nocta9j_3ZEIBLbn0Ub1cQHo1n09_osr/view  
+
+- **Power BI Dashboard (PBIX)**  
+  https://drive.google.com/file/d/1vxkS-JHMc8jHwFhMek87Jxsc7gWsRPJS/view  
+
+- **Project Report (DOCX)**  
+  https://docs.google.com/document/d/1cTLKUNE2wDZC8c-5jGuMtyYLQVl7Clbr/edit  
+
+- **Presentation (PPT)**  
+  https://drive.google.com/file/d/1A6xkk0yKHRMnWeGemkwpEClfK0TTBw71/view  
+
+---
+
+If you find this project useful, feel free to ⭐ the repository.
 
